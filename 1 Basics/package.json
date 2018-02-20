@@ -4,7 +4,9 @@
   "description": "Basic ReactJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build",
+    "build": "webpack -d && xcopy \"src/index.html\" \"dist/\" /F /Y && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -p && xcopy \"src/index.html\" \"dist/\" /F /Y"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
