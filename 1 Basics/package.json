@@ -1,0 +1,22 @@
+{
+  "name": "react-basics",
+  "version": "1.0.0",
+  "description": "Basic ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Tejas-Nanaware/Learning-ReactJS.git"
+  },
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Tejas Nanaware",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/Tejas-Nanaware/Learning-ReactJS/issues"
+  },
+  "homepage": "https://gitlab.com/Tejas-Nanaware/Learning-ReactJS#README"
+}
