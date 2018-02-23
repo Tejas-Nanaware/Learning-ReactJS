@@ -7,7 +7,8 @@ export class Home extends React.Component {
 		this.state = {
 			age: props.user.age,
 			status: 0,
-			homeLink: props.initialLinkName
+			homeLink: props.initialLinkName,
+			initialParagraph: "This is a Paragraph"
 		};
 		setTimeout(	() => {
 			this.setState({
@@ -28,6 +29,11 @@ export class Home extends React.Component {
 			homeLink: event.target.value
 		});
 	}
+	changeParagraph(event) {
+		this.setState({
+			initialParagraph: event.target.value
+		});
+	}
 	render() {
 		return(
 			<div className="container">
@@ -42,6 +48,9 @@ export class Home extends React.Component {
 				<hr/>
 				<input type="text" value={ this.state.homeLink } onChange={(event) => this.onHandleChange(event)}></input>
 				<button className="btn btn-primary" onClick={ this.onChangeName.bind(this) }>Change Link</button>
+				<hr/>
+				<p>{ this.state.initialParagraph }</p>
+				<input type="text" value={ this.state.initialParagraph } onChange={(event) => this.changeParagraph(event)}></input>
 			</div>
 		);
 	}
