@@ -11,6 +11,7 @@ class App extends React.Component {
 		var user = {
 			name: "Tejas",
 			college: "Atharva College of Engineering",
+			age: 21,
 			hobbies: ['Coding', 'Reading', 'Writing']
 		};
 		return(
@@ -19,9 +20,7 @@ class App extends React.Component {
 					<Header/>
 				</div>
 				<div className="container">
-					<Home user={user}>
-						<p>This is passed as children</p>
-					</Home>
+					<Home user={user}/>
 				</div>
 			</div>
 		);

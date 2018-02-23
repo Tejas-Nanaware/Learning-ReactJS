@@ -2,25 +2,28 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 export class Home extends React.Component {
+
+	constructor(props) {
+		super();
+		this.age = props.user.age;
+	}
+	increaseAge() {
+		this.age += 1;
+		console.log(this.age);
+	}
 	render() {
 		return(
 			<div className="container">
 				<h1 id="second">Hi { this.props.user.name }</h1>
 				<h2>{ this.props.user.college }</h2>
-				<div>
-					<h4>Hobbies</h4>
-					<ul>
-						{this.props.user.hobbies.map((hobby, i) => <li key = {i}>{ hobby }</li>)}
-					</ul>
-				</div>
+				<p> Age is: { this.age }</p>
 				<hr/>
-				{this.props.children}
+				<button className="btn" onClick={ this.increaseAge.bind(this) }>Increase age</button>
 			</div>
 		);
 	}
 }
 
 Home.propTypes = {
-	user: PropTypes.object,
-	children: PropTypes.element.isRequired
+	user: PropTypes.object
 };
