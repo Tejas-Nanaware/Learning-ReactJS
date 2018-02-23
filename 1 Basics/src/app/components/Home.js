@@ -5,18 +5,28 @@ export class Home extends React.Component {
 
 	constructor(props) {
 		super();
-		this.age = props.user.age;
+		this.state = {
+			age: props.user.age,
+			status: 0
+		};
+		setTimeout(	() => {
+			this.setState({
+				status: 1
+			});
+		}, 3000 );
 	}
 	increaseAge() {
-		this.age += 1;
-		console.log(this.age);
+		this.setState({
+			age: ++this.state.age
+		});
 	}
 	render() {
 		return(
 			<div className="container">
 				<h1 id="second">Hi { this.props.user.name }</h1>
 				<h2>{ this.props.user.college }</h2>
-				<p> Age is: { this.age }</p>
+				<p> Age is: { this.state.age }</p>
+				<p> Status: { this.state.status }</p>
 				<hr/>
 				<button className="btn" onClick={ this.increaseAge.bind(this) }>Increase age</button>
 			</div>
