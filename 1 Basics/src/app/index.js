@@ -6,6 +6,20 @@ import { Header } from "./components/Header"
 import { Home } from "./components/Home"
 
 class App extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			homeLink: "Home"
+		};
+	}
+	onGreet() {
+		alert("Hello World!")
+	}
+	onChangeLinkName(newName) {
+		this.setState({
+			homeLink: newName
+		});
+	}
 	render() {
 		// what to do when component renders the code
 		var user = {
@@ -17,10 +31,14 @@ class App extends React.Component {
 		return(
 			<div className="container">
 				<div className="container">
-					<Header/>
+					<Header homeLink={ this.state.homeLink }/>
 				</div>
 				<div className="container">
-					<Home user={user}/>
+					<Home 
+						user={user}
+						greet={this.onGreet}
+						changeLink={this.onChangeLinkName.bind(this)}
+						/>
 				</div>
 			</div>
 		);
