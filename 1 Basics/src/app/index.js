@@ -9,7 +9,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			homeLink: "Home"
+			homeLink: "Home",
+			homeMounted: true
 		};
 	}
 	onGreet() {
@@ -20,6 +21,11 @@ class App extends React.Component {
 			homeLink: newName
 		});
 	}
+	onChangeHomeMounted() {
+		this.setState({
+			homeMounted: !this.state.homeMounted
+		});
+	}
 	render() {
 		// what to do when component renders the code
 		var user = {
@@ -28,19 +34,29 @@ class App extends React.Component {
 			age: 21,
 			hobbies: ['Coding', 'Reading', 'Writing']
 		};
+		let homeCmp = "";
+		if(this.state.homeMounted) {
+			homeCmp = (
+						<Home 
+							user={user}
+							greet={this.onGreet}
+							changeLink={this.onChangeLinkName.bind(this)}
+							initialLinkName={this.state.homeLink}
+						/>
+			);
+		}
 		return(
 			<div className="container">
 				<div className="container">
 					<Header homeLink={ this.state.homeLink }/>
 				</div>
 				<div className="container">
-					<Home 
-						user={user}
-						greet={this.onGreet}
-						changeLink={this.onChangeLinkName.bind(this)}
-						initialLinkName={this.state.homeLink}
-						/>
+					{homeCmp}
 				</div>
+				<div className="container">
+						<button id="second" className="btn btn-danger" onClick={() => this.onChangeHomeMounted()}>(Un)Mount Home Component</button>
+				</div>
+				
 			</div>
 		);
 	}
