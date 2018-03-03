@@ -1,0 +1,10 @@
+.todoWrapper {
+	border-bottom: 1px solid #efefef;
+	text-align: left;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+  }
+label {
+	margin-left: 2%;
+	font-weight: normal !important;
+}
