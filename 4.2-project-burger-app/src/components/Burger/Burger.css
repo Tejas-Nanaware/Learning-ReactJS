@@ -1,0 +1,30 @@
+.Burger {
+	width: 100%;
+	margin: auto;
+	height: 250px;
+	overflow: scroll;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+/* potrait */
+@media (min-width: 500px) and (min-width: 400px) {
+	.Burger {
+		width: 350px;
+		height: 300px;
+	}
+}
+/* tablet */
+@media (min-width: 500px) and (min-width: 401px) {
+	.Burger {
+		width: 450px;
+		height: 400px;
+	}
+}
+/* high-res laptop */
+@media (min-width: 1024px) and (min-width: 768px) {
+	.Burger {
+		width: 700px;
+		height: 600px;
+	}
+}
