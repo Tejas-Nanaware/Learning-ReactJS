@@ -11,9 +11,19 @@ class App extends Component {
     }
   }
 
-  generateJoke() {
+  resetJoke = () => {
+    let joke = "For more jokes, click again";
+    this.setState({joke: joke});
+  }
+
+  waitedForTooLong = () => {
+    setInterval(this.resetJoke,10000);
+  }
+
+  generateJoke = () => {
     let myJoke = jokes[Math.floor(Math.random()*jokes.length)];
     this.setState({joke: myJoke});
+    this.waitedForTooLong();
   }
   
   render() {
